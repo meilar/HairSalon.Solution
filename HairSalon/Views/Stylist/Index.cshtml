@@ -13,7 +13,7 @@
       {
         <div id="no-stylist" class="text-center">
           <p class="lead">There are no stylists to display.</p>
-          <a href="/Stylists/new" class="btn btn-primary">Add a new stylist</a>
+          <p>@Html.ActionLink("Add a new Stylist", "Create", "Stylist", null, new { @class="btn btn-primary"})</p>
         </div>
       }
   <div class="card-columns mx-auto d-flex justify-content-center col-8">
@@ -24,8 +24,8 @@
         <h5 class="card-title">@stylist.Name</h5>
         <h6 class="card-subtitle mb-2 text-muted">Stylist ID# @stylist.StylistId</h6>
         <p class="card-text">@stylist.Details</p>
-        <a href="/Stylists/@stylist.StylistId" class="card-link">Orders</a>
-        <a href="/Stylists/@stylist.StylistId/Orders/new" class="card-link">Add new order</a>
+        <a href="/Stylists/@stylist.StylistId" class="card-link">All Clients</a>
+        <a href="/Stylists/@stylist.StylistId/Orders/new" class="card-link">Add new Client</a>
       </div>
     </div>
   }

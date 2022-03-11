@@ -1,6 +1,7 @@
 @{
   Layout = "_Layout";
 }
+@model HairSalon.Models.Stylist
   <div class="container">
   @await Html.PartialAsync("_Navbar")
   <div id="stylist-jumbo" class="jumbotron jumbotron-fluid">
@@ -9,17 +10,17 @@
     </div>
   </div>
   <div class="container">
-    <form action="/Stylists" method="post">
+    <form action="~/Stylist/Create" method="post">
       <div class="form-group">
-        <label for="stylistName">Enter Stylist name</label>
-        <input type="text" class="form-control" name="stylistName" id="stylistName" aria-describedby="textHelp" placeholder="John Doe">
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name, new { @class="form-control", @placeholder="John Doe"})
       </div>
       <div class="form-group">
-        <label for="stylistDetails">Enter notes and stylist specialties.</label>
-        <textarea class="form-control" id="stylistDetails" name="stylistDetails" rows="3"></textarea>
+        @Html.LabelFor(model => model.Details)
+        @Html.TextAreaFor(model => model.Details, new { @class="form-control", @placeholder="Baby's first haircut, ombre color"})
       </div>
       <button type="submit" class="btn btn-primary">Create Stylist</button>
-      <a href="/stylists" class="btn btn-danger">Cancel</a>
+      <a>@Html.ActionLink("Cancel", "Index", "Stylist", null, new { @class="btn btn-danger"})</a>
     </form>
   </div>
   @await Html.PartialAsync("_Footer")

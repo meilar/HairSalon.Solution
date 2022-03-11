@@ -7,13 +7,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        <p>@Html.ActionLink("Home", "Index", "Home", null, htmlAttributes: new { @class = "nav-link align-middle" })</p>
       </li>
       <li class="nav-item">
-        <p>@Html.ActionLink("All Stylists", "Index", "Stylist", htmlAttributes: new { @class = "nav-link align-middle" })</p>
+        <p>@Html.ActionLink("All Stylists", "Index", "Stylist", null, htmlAttributes: new { @class = "nav-link align-middle" })</p>
       </li>
       <li class="nav-item">
-        <p>@Html.ActionLink("Add Stylists", "Create", "Stylist", htmlAttributes: new { @class = "nav-link align-middle" })</p>
+        <p>@Html.ActionLink("Add Stylists", "Create", "Stylist", null, htmlAttributes: new { @class = "nav-link align-middle" })</p>
       </li>
   </div>
 </nav>
