@@ -1,0 +1,41 @@
+
+ul#footer {
+  width:100%;
+  padding:8px;
+  text-align: center;
+}
+
+div#title-bar {
+  text-align: center;
+  position:fixed;
+  top:0px;
+  right:0px;
+  width:100%;
+  padding:8px;
+}
+
+#homepage-photo {
+  height: 30%;
+  width: auto;
+}
+
+#vendor-jumbo {
+  background-color: rgba(250, 240, 230, 0.932);
+  background-image: url("../img/mohamed-hassouna-N4gtuEZ5gWc-unsplash.jpg");
+  background-size: cover;
+  color: black;
+}
+
+#vendor-jumbo h1 {
+  padding-left: 17%;
+  color: white;
+  text-shadow: 4px 4px 6px gray;
+}
+
+.card {
+  min-width: 18rem;
+}
+
+#add-form {
+  margin-top: 5%;
+}
