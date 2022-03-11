@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+  <div class="container">
+  @await Html.PartialAsync("_Navbar")
+  <div id="stylist-jumbo" class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Add a Stylist</h1>      
+    </div>
+  </div>
+  <div class="container">
+    <form action="/Stylists" method="post">
+      <div class="form-group">
+        <label for="stylistName">Enter Stylist name</label>
+        <input type="text" class="form-control" name="stylistName" id="stylistName" aria-describedby="textHelp" placeholder="John Doe">
+      </div>
+      <div class="form-group">
+        <label for="stylistDetails">Enter notes and stylist specialties.</label>
+        <textarea class="form-control" id="stylistDetails" name="stylistDetails" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Create Stylist</button>
+      <a href="/stylists" class="btn btn-danger">Cancel</a>
+    </form>
+  </div>
+  @await Html.PartialAsync("_Footer")
+  </div>

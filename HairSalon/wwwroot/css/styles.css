@@ -39,3 +39,7 @@ div#title-bar {
 #add-form {
   margin-top: 5%;
 }
+
+.nav-link {
+  padding-top: 1.5rem;
+  }
