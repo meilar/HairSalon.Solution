@@ -21,10 +21,12 @@
   { 
     <div id='stylist-card-@stylist.StylistId' class="card mx-auto">
       <div class="card-body stylist-card">
+        @* <img href="https://randomuser.me/api/portraits/women/$'{@stylist.StylistId}'.jpg"> *@
         <h5 class="card-title">@stylist.Name</h5>
         <h6 class="card-subtitle mb-2 text-muted">Stylist ID# @stylist.StylistId</h6>
         <p class="card-text">@stylist.Details</p>
-        <a href="/Stylists/@stylist.StylistId" class="card-link">All Clients</a>
+        <a>@Html.ActionLink("All Clients", "Details", new { id = stylist.StylistId }, new {@class ="card-link"})</a>
+        <a>@Html.ActionLink("Add new Client", "Create", "Client", new { id = stylist.StylistId }, new {@class ="card-link"})</a>
         <a href="/Stylists/@stylist.StylistId/Orders/new" class="card-link">Add new Client</a>
       </div>
     </div>
