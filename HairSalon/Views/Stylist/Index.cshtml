@@ -16,20 +16,22 @@
           <p>@Html.ActionLink("Add a new Stylist", "Create", "Stylist", null, new { @class="btn btn-primary"})</p>
         </div>
       }
-  <div class="card-columns mx-auto d-flex justify-content-center col-8">
   @foreach (Stylist stylist in Model)
   { 
-    <div id='stylist-card-@stylist.StylistId' class="card mx-auto">
-      <div class="card-body stylist-card">
-        @* <img href="https://randomuser.me/api/portraits/women/$'{@stylist.StylistId}'.jpg"> *@
-        <h5 class="card-title">@stylist.Name</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Stylist ID# @stylist.StylistId</h6>
-        <p class="card-text">@stylist.Details</p>
-        <a>@Html.ActionLink("All Clients", "Details", new { id = stylist.StylistId }, new {@class ="card-link"})</a>
-        <a>@Html.ActionLink("Add new Client", "Create", "Client", new { id = stylist.StylistId }, new {@class ="card-link text-success"})</a>
+    <div class="card-columns mx-auto d-flex justify-content-center col-8">
+      <div id='stylist-card-@stylist.StylistId' class="card mx-auto">
+        <div class="card-body stylist-card">
+          @* <img href="https://randomuser.me/api/portraits/women/$'{@stylist.StylistId}'.jpg"> *@
+          <h5 class="card-title">@stylist.Name</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Stylist ID# @stylist.StylistId</h6>
+          <p class="card-text">@stylist.Details</p>
+          <p class="text-secondary">Current clients: @stylist.Clients.Count</p>
+          <a>@Html.ActionLink("Delete stylist", "Delete", new { id = stylist.StylistId }, new {@class ="card-link text-danger"})</a>
+          <a>@Html.ActionLink("View Clients", "Details", new { id = stylist.StylistId }, new {@class ="card-link"})</a>
+          <a>@Html.ActionLink("Add new Client", "Create", "Client", new { id = stylist.StylistId }, new {@class ="card-link text-success"})</a>
+        </div>
       </div>
     </div>
   }
-  </div>
   @await Html.PartialAsync("_Footer")
 </div>
