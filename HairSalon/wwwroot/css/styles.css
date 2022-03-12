@@ -44,4 +44,14 @@ div#title-bar {
   padding-top: 1.5rem;
   }
 
-  
+.card-link {
+  margin-right: 1rem;
+}
+
+#no-stylist {
+  margin-top: 5%;
+}
+
+#details-header {
+  margin-top: 5%;
+}
