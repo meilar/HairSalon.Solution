@@ -27,7 +27,6 @@
         <p class="card-text">@stylist.Details</p>
         <a>@Html.ActionLink("All Clients", "Details", new { id = stylist.StylistId }, new {@class ="card-link"})</a>
         <a>@Html.ActionLink("Add new Client", "Create", "Client", new { id = stylist.StylistId }, new {@class ="card-link"})</a>
-        <a href="/Stylists/@stylist.StylistId/Orders/new" class="card-link">Add new Client</a>
       </div>
     </div>
   }

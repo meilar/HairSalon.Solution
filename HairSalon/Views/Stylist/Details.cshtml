@@ -1,0 +1,42 @@
+@{
+  Layout = "_Layout";
+}
+@using HairSalon.Models
+@model HairSalon.Models.Stylist
+  <div class="container">
+  @await Html.PartialAsync("_Navbar")
+  <h1>Stylist: @Model.Name</h1>
+  <h3 class="text-primary">@Model.Details</h3>
+  @if (Model.Clients.Count == 0)
+  {
+        <div id="no-stylist" class="text-center">
+          <p class="lead">There are no clients to display.</p>
+          <p>@Html.ActionLink("Add a new client", "Create", "Client", null, new { @class="btn btn-primary"})</p>
+        </div>
+  }
+  else
+  {  
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ClientID #</th>
+        <th scope="col">Client Name</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach (Client client in @Model.Clients)
+      {
+      <tr>
+        <th scope="row">@client.ClientId</th>
+        <td>@client.Name</td>
+        <td>@Html.ActionLink("Edit", "Edit", "Client", null, new { @class = "text-warning"})</td>
+        <td>@Html.ActionLink("Delete", "Delete", "Client", new { @id = client.ClientId}, new { @class = "text-danger"})</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  }
+  @await Html.PartialAsync("_Footer")
+  </div>
