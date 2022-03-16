@@ -24,9 +24,9 @@ div#title-bar {
 }
 
 .jumbotron h1 {
-  padding-left: 10%;
+  text-align: center;
   color: #646536;
-  text-shadow: 4px 4px 6px whitesmoke;
+  text-shadow: 1px 1px 2px #483D03;
 }
 
 .card {
