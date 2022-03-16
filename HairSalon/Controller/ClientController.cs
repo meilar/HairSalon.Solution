@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using HairSalon.Models;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,13 +15,15 @@ namespace HairSalon.Controllers
     }
     public ActionResult Index()
     {
-      List<Client> model = _db.Clients.Include(client => client.Stylist).ToList();
+      List<Client> model = _db.Clients.ToList();
+      ViewBag.Stylists = _db.Stylists.ToList();
       return View(model);
     }
 
     public ActionResult Create()
     {
-      ViewBag.StylistId= new SelectList(_db.Stylists, "StylistId", "Name");
+      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
+      ViewBag.Stylists = _db.Stylists.ToList();
       return View();
     }
 
@@ -37,21 +38,6 @@ namespace HairSalon.Controllers
     {
       Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
       return View(thisClient);
-    }
-
-    public ActionResult Edit(int id)
-    {
-      Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
-      ViewBag.CateogryId = new SelectList(_db.Stylists, "StylistId", "Name");
-      return View(thisClient);
-    }
-
-    [HttpPost]
-    public ActionResult Edit(Client client)
-    {
-      _db.Entry(client).State = EntityState.Modified;
-      _db.SaveChanges();
-      return RedirectToAction("Index");
     }
 
     public ActionResult Delete(int id)

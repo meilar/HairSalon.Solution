@@ -56,6 +56,12 @@ namespace HairSalon.Controllers
     public ActionResult Delete(int id)
     {
       Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      List<Client> cleanupList = _db.Clients.Where(client => client.StylistId == id).ToList();
+      foreach(Client client in cleanupList)
+      {
+        _db.Clients.Remove(client);
+        _db.SaveChanges();
+      }
       _db.Stylists.Remove(thisStylist);
       _db.SaveChanges();
       return RedirectToAction("Index");
@@ -65,6 +71,12 @@ namespace HairSalon.Controllers
     public ActionResult DeleteConfirmed(int id)
     {
       Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      List<Client> cleanupList = _db.Clients.Where(client => client.StylistId == id).ToList();
+      foreach(Client client in cleanupList)
+      {
+        _db.Clients.Remove(client);
+        _db.SaveChanges();
+      }
       _db.Stylists.Remove(thisStylist);
       _db.SaveChanges();
       return RedirectToAction("Index");

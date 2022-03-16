@@ -10,23 +10,31 @@
       <h1 class="display-4">Add a Client</h1>      
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-      <form action="~/Client/Create" method="post">
-        <div class="form-group">
-          @Html.LabelFor(model => model.Name)
-          @Html.TextBoxFor(model => model.Name, new { @class="form-control required", @required="required", @placeholder="John Doe"})
-        </div>
-        <div class="form-group">
-          @Html.LabelFor(model => model.Stylist)
-          @Html.DropDownList("StylistId", ViewBag.StylistId, null, new {@class="form-control custom-select required", @required="required", @style = "width: 100%"})
-        </div>
-        <button type="submit" class="btn btn-primary">Add Client</button>
-        <a>@Html.ActionLink("Cancel", "Index", "Stylist", null, new { @class="btn btn-danger"})</a>
-      </form>
+  @if(ViewBag.Stylists.Count == 0) 
+  {
+    <h3> There are no stylists. You must first add a stylist. </h3>
+    <p>@Html.ActionLink("New Stylist", "Create", "Stylist", null, htmlAttributes: new { @class = "btn btn-primary" })</p>
+  }
+  else
+  {
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <form action="~/Client/Create" method="post">
+          <div class="form-group">
+            @Html.LabelFor(model => model.Name)
+            @Html.TextBoxFor(model => model.Name, new { @class="form-control required", @required="required", @placeholder="John Doe"})
+          </div>
+          <div class="form-group">
+            @Html.LabelFor(model => model.Stylist)
+            @Html.DropDownList("StylistId", ViewBag.StylistId, null, new {@class="form-control custom-select required", @required="required", @style = "width: 100%"})
+          </div>
+          <button type="submit" class="btn btn-primary">Add Client</button>
+          <a>@Html.ActionLink("Cancel", "Index", "Stylist", null, new { @class="btn btn-danger"})</a>
+        </form>
+      </div>
+      <div class="col-md-2"></div>
     </div>
-    <div class="col-md-2"></div>
-  </div>
+  }
   @await Html.PartialAsync("_Footer")
   </div>
