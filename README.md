@@ -25,7 +25,7 @@ Before downloading project files, you must have the following tools installed:
 - Open MySQL Workbench and log into your server. 
 - Select `Administration` from the `Navigator` panel.
 - Select `Data Import/Restore`
-- Select `Import from self-contained file`, then choose `matthew_eilar.sql` in the `HairSalon` folder.
+- Select `Import from self-contained file`, then choose `matthew_eilar.sql` in the `HairSalon.Solution` folder.
 - In `Default Schema to be Imported to`, select `New` and name the schema `matthew_eilar`. If you select a different name, the project will not load.
 - Click `Start Import`
 - Once the schema has been added, click on the circle with arrows icon to refresh your view, and confirm that the new schema appears in the list. If it does not appear, please try these instructions again.   
