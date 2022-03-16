@@ -8,7 +8,7 @@ Matthew Eilar | [LinkedIn](https://www.linkedin.com/in/eilar-503/) | [email](mai
 
 This application allows a salon owner to track a list of stylists, a list of clients, and to associate those clients with a stylist. 
 
-### Accessing this application
+## Accessing this application
 
 ### Pre-installation
 

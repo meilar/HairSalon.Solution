@@ -23,7 +23,6 @@
       <tr>
         <th scope="col">Client ID #</th>
         <th scope="col">Client Name</th>
-        <th scope="col">Edit</th>
         <th scope="col">Delete</th>
       </tr>
     </thead>
@@ -33,7 +32,6 @@
       <tr>
         <th scope="row">@client.ClientId</th>
         <td>@client.Name</td>
-        <td>@Html.ActionLink("Edit", "Edit", "Client", null, new { @class = "text-warning"})</td>
         <td>@Html.ActionLink("Delete", "Delete", "Client", new { @id = client.ClientId}, new { @class = "text-danger"})</td>
       </tr>
       }
