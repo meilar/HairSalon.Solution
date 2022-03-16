@@ -12,8 +12,10 @@
   </div>
   @if(ViewBag.Stylists.Count == 0) 
   {
-    <h3> There are no stylists. You must first add a stylist. </h3>
-    <p>@Html.ActionLink("New Stylist", "Create", "Stylist", null, htmlAttributes: new { @class = "btn btn-primary" })</p>
+    <div class="text-center">
+      <p class="lead"> There are no stylists. You must first add a stylist. </p>
+      <p>@Html.ActionLink("New Stylist", "Create", "Stylist", null, htmlAttributes: new { @class = "btn btn-primary" })</p>
+    </div>
   }
   else
   {

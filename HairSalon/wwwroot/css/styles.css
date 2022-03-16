@@ -19,17 +19,14 @@ div#title-bar {
   width: auto;
 }
 
-#vendor-jumbo {
-  background-color: rgba(250, 240, 230, 0.932);
-  background-image: url("../img/mohamed-hassouna-N4gtuEZ5gWc-unsplash.jpg");
-  background-size: cover;
-  color: black;
+.jumbotron {
+  background: linear-gradient(.25turn, #b6d7b9, 10%, #d0f1bf);
 }
 
-#vendor-jumbo h1 {
-  padding-left: 17%;
-  color: white;
-  text-shadow: 4px 4px 6px gray;
+.jumbotron h1 {
+  padding-left: 10%;
+  color: #646536;
+  text-shadow: 4px 4px 6px whitesmoke;
 }
 
 .card {
